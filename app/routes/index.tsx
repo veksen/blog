@@ -1,6 +1,13 @@
+import { styled } from "~/stitches.config";
+
+const Box = styled("div", {
+  backgroundColor: "#f00",
+});
+
 export default function Index() {
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
+      <Box>Stitches work</Box>
       <h1>Welcome to Remix</h1>
       <ul>
         <li>
