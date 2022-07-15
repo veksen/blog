@@ -7,7 +7,7 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
-import { getCssText } from "~/stitches.config";
+import { getCssText, globalStyles } from "~/stitches.config";
 
 export const meta: MetaFunction = () => ({
   charset: "utf-8",
@@ -21,6 +21,7 @@ export default function App() {
       <head>
         <Meta />
         <Links />
+        {globalStyles()}
         <style
           suppressHydrationWarning
           dangerouslySetInnerHTML={{ __html: getCssText() }}

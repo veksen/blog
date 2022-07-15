@@ -1,4 +1,6 @@
 import { styled } from "~/stitches.config";
+import Heading from "~/ui/heading";
+import Stack from "~/ui/stack";
 
 const Box = styled("div", {
   backgroundColor: "#f00",
@@ -8,6 +10,10 @@ export default function Index() {
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
       <Box>Stitches work</Box>
+      <Stack>
+        <Heading as="h1">React anti-patterns</Heading>
+        <Heading as="h2">Duplicate state</Heading>
+      </Stack>
       <h1>Welcome to Remix</h1>
       <ul>
         <li>
