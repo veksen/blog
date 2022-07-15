@@ -1,3 +1,4 @@
+import Sidebar from "~/components/sidebar";
 import { styled } from "~/stitches.config";
 import Heading from "~/ui/heading";
 import Stack from "~/ui/stack";
@@ -10,6 +11,7 @@ export default function Index() {
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
       <Box>Stitches work</Box>
+      <Sidebar />
       <Stack>
         <Heading as="h1">React anti-patterns</Heading>
         <Heading as="h2">Duplicate state</Heading>
