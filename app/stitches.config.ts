@@ -14,13 +14,13 @@ const { styled, getCssText, globalCss, css } = createStitches({
       body: "Oswald, sans-serif",
       mono: "JetBrains Mono, monospace",
     },
-    spacing: {
+    space: {
       0: 0,
-      1: 4,
-      2: 8,
-      3: 16,
-      4: 32,
-      5: 64,
+      1: "4px",
+      2: "8px",
+      3: "16px",
+      4: "32px",
+      5: "64px",
     },
   },
 });
@@ -55,6 +55,9 @@ export const globalStyles = globalCss({
     },
   ],
   body: {
+    fontSize: 18,
+    fontFamily: "$body",
+    lineHeight: 1.47,
     background: "$blue900",
     color: "#fff",
   },

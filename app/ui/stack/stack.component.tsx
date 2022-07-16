@@ -31,6 +31,15 @@ const StyledStack = styled("div", {
       2: {
         gap: "$2",
       },
+      3: {
+        gap: "$3",
+      },
+      4: {
+        gap: "$4",
+      },
+      5: {
+        gap: "$5",
+      },
     },
   },
 });
