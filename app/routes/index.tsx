@@ -5,12 +5,14 @@ import Heading from "~/ui/heading";
 import Stack from "~/ui/stack";
 
 const Layout = styled("main", {
+  padding: "$4 0",
   width: "800px",
   maxWidth: "100%",
   margin: "0 auto",
   display: "grid",
   gridTemplateAreas: `
-    "x header"
+    "....... header"
+    "....... subheader"
     "sidebar content"
   `,
   gridTemplateColumns: "150px 1fr",
@@ -24,7 +26,9 @@ export default function Index() {
     <Layout>
       <Box css={{ gridArea: "header", gridColumnStart: 2 }}>
         <Header />
+      </Box>
 
+      <Box css={{ gridArea: "subheader", gridColumnStart: 2 }}>
         <Stack>
           <Heading as="h1">React anti-patterns</Heading>
           <Heading as="h2">Duplicate state</Heading>
