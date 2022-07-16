@@ -1,5 +1,6 @@
 import { styled } from "~/stitches.config";
 import Sidebar from "~/components/sidebar";
+import Header from "~/components/header";
 import Heading from "~/ui/heading";
 import Stack from "~/ui/stack";
 
@@ -22,6 +23,8 @@ export default function Index() {
   return (
     <Layout>
       <Box css={{ gridArea: "header", gridColumnStart: 2 }}>
+        <Header />
+
         <Stack>
           <Heading as="h1">React anti-patterns</Heading>
           <Heading as="h2">Duplicate state</Heading>
