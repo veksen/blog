@@ -1,0 +1,73 @@
+# React anti-patterns: Duplicate state
+
+One common thing to do when starting React is getting used to state for solving our issues. I want to store something, it goes in state, simple! However, as our application grows, we find ourselves putting _everything_ in state, and that could be a mistake, let’s look at this.
+
+## Simple example
+
+Consider a simple calculator application, where we would store the user input, and the result in state.
+
+```js
+const [numbersToAdd, setNumbersToAdd] = useState([])
+const [result, setResult] = useState(0)
+
+// somewhere in the code
+const numbersSum = sum(numbersToAdd)
+setResult(numbersSum)
+```
+
+This all sounds harmless at first, but the integrity of the state here depends on the code that manipulates this state. Stuff like getting out of sync, or forgetting to reset can and will lead to one of the most common source of bugs when working with React: **impossible state**.
+
+A better version of this would be:
+
+```js
+const [numbersToAdd, setNumbersToAdd] = useState([])
+const result = sum(numbersToAdd)
+
+// or, using useMemo
+const result = useMemo(() => {
+  return sum(numbersToAdd)
+}, [numbersToAdd])
+```
+
+## Little more complex example
+
+A more concrete example of this would be when building a filtering system. I often see it written like this:
+
+```js
+// original list of items, could be from state, from props
+const items = [{ name: "Banana", price: 3 }, { name: "Apple", price: 2 }, { name: "Orange", price: 1.5 }]
+
+// all items initially shown
+const [filteredItems, setFilteredItems] = useState(items)
+const [filter, setFilter] = useState('')
+
+// somewhere in the code
+function filterItems() {
+  const newFilteredItems = items.filter(item => {
+    return item.name.toLowerCase().includes(filter.toLowerCase())
+  })
+
+  setFilteredItems(newFilteredItems)
+}
+```
+
+If we want to get rid of the extraneous state, we can use `useMemo`, again:
+
+```js
+const items = [{ name: "Banana", price: 3 }, { name: "Apple", price: 2 }, { name: "Orange", price: 1.5 }]
+
+const [filter, setFilter] = useState('')
+
+const filteredItems = useMemo(() => {
+  // without a filter, we show all items
+  if (!filter) {
+    return items
+  }
+
+  return items.filter(item => {
+    return item.name.toLowerCase().includes(filter.toLowerCase())
+  })
+}, [items, filter])
+```
+
+To summarize, if a state variable is the compound (result) of state, try and get rid of it. There are certain cases where this is not possible directly, for example, asynchronous operations (like for http/fetch calls). We try to keep the state as simple as possible // tbc

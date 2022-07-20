@@ -1,8 +1,13 @@
+import React from "react";
+import { json } from "@remix-run/node";
+import { useLoaderData } from "@remix-run/react";
+import { getMDXComponent } from "mdx-bundler/client";
 import { styled } from "~/stitches.config";
 import Sidebar from "~/components/sidebar";
 import Header from "~/components/header";
 import Heading from "~/ui/heading";
 import Stack from "~/ui/stack";
+import { getPostsList } from "~/utils/mdx.server";
 
 const Layout = styled("main", {
   padding: "$4 0",
@@ -21,7 +26,33 @@ const Layout = styled("main", {
 
 const Box = styled("div");
 
+export async function loader() {
+  // Return metadata about each of the posts for display on the index page.
+  // Referencing the posts here instead of in the Index component down below
+  // lets us avoid bundling the actual posts themselves in the bundle for the
+  // index page.
+
+  const posts = await getPostsList();
+  return json(posts[0]);
+}
+
+const components = {
+  // img: ResponsiveImage,
+  // h1: Heading.H1,
+  // h2: Heading.H2,
+  // p: Text,
+  // code: Pre,
+  // inlineCode: Code,
+};
+
 export default function Index() {
+  const content = useLoaderData();
+
+  const Component = React.useMemo(
+    () => getMDXComponent(content.mdx),
+    [content.mdx]
+  );
+
   return (
     <Layout>
       <Box css={{ gridArea: "header", gridColumnStart: 2 }}>
@@ -40,6 +71,7 @@ export default function Index() {
       </Box>
 
       <Box css={{ gridArea: "content" }}>
+        <Component />
         <Stack spacing="3">
           <p>
             One common thing to do when starting React is getting used to state
