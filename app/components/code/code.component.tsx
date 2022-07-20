@@ -5,6 +5,7 @@ const StyledPre = styled("pre", {
   background: "$blue700",
   padding: "$4",
   margin: "0 -$4",
+  fontFamily: "$mono !important",
 
   ".token.keyword": {
     color: "$purple500",
