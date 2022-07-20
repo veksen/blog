@@ -3,12 +3,14 @@ import { createStitches } from "@stitches/react";
 const { styled, getCssText, globalCss, css } = createStitches({
   theme: {
     colors: {
+      blue300: "#C5C7DC",
       blue900: "#222331",
       blue700: "#34364B",
       yellow500: "#DCE57F",
       teal500: "#7FCDE5",
       purple500: "#DCAFFF",
       green500: "#81E89F",
+      red500: "#E89481",
     },
     fonts: {
       body: "Oswald, sans-serif",

@@ -8,6 +8,7 @@ import Header from "~/components/header";
 import Heading from "~/ui/heading";
 import Stack from "~/ui/stack";
 import { getPostsList } from "~/utils/mdx.server";
+import Code from "~/components/code";
 
 const Layout = styled("main", {
   padding: "$4 0",
@@ -43,6 +44,7 @@ const components = {
   // p: Text,
   // code: Pre,
   // inlineCode: Code,
+  pre: Code,
 };
 
 export default function Index() {
@@ -71,7 +73,7 @@ export default function Index() {
       </Box>
 
       <Box css={{ gridArea: "content" }}>
-        <Component />
+        <Component components={components} />
         <Stack spacing="3">
           <p>
             One common thing to do when starting React is getting used to state

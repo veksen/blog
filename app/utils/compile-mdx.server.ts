@@ -19,7 +19,6 @@ export const bundleMDX = async ({ cwd, file }: IBundleMdx) => {
   const { default: remarkFootnotes } = await import("remark-footnotes");
   const { default: rehypeSlug } = await import("rehype-slug");
   const { default: linkHeadings } = await import("rehype-autolink-headings");
-  const { default: rehypePrism } = await import("rehype-prism-plus");
 
   return mdxBundler.bundleMDX({
     cwd,
@@ -37,7 +36,6 @@ export const bundleMDX = async ({ cwd, file }: IBundleMdx) => {
         ...(options.rehypePlugins ?? []),
         rehypeSlug,
         linkHeadings,
-        [rehypePrism, { ignoreMissing: true, showLineNumbers: true }],
       ];
 
       return options;
