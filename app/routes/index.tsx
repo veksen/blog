@@ -20,7 +20,7 @@ const Layout = styled("main", {
     "....... subheader"
     "sidebar content"
   `,
-  gridTemplateColumns: "150px 1fr",
+  gridTemplateColumns: "150px minmax(0, 1fr)",
   gap: "$4 $5",
 });
 
