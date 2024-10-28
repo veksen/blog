@@ -1,0 +1,11 @@
+{
+  "javascript.preferences.importModuleSpecifier": "relative",
+  "eslint.workingDirectories": [
+    { "pattern": "apps/*/" },
+    { "pattern": "packages/*/" }
+  ],
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.patterns": {
+    "*.ts": "${capture}.*.ts"
+  }
+}
