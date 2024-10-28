@@ -1,14 +1,14 @@
 {
   "name": "docs",
   "version": "0.0.0",
-  "type": "module",
   "private": true,
+  "type": "module",
   "scripts": {
-    "dev": "storybook dev -p 6006",
     "build": "storybook build --docs",
-    "preview-storybook": "serve storybook-static",
     "clean": "rm -rf .turbo && rm -rf node_modules",
-    "lint": "eslint ./stories/*.stories.tsx --max-warnings 0"
+    "dev": "storybook dev -p 6006",
+    "lint": "eslint ./stories/*.stories.tsx --max-warnings 0",
+    "preview-storybook": "serve storybook-static"
   },
   "dependencies": {
     "@acme/ui": "*",
@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "@repo/eslint-config": "*",
+    "@repo/typescript-config": "*",
     "@storybook/addon-actions": "^8.2.6",
     "@storybook/addon-essentials": "^8.2.6",
     "@storybook/addon-links": "^8.2.6",
@@ -26,7 +27,6 @@
     "eslint": "^8.57.0",
     "serve": "^14.2.1",
     "storybook": "^8.2.6",
-    "@repo/typescript-config": "*",
     "typescript": "5.5.4",
     "vite": "^5.1.4"
   }
