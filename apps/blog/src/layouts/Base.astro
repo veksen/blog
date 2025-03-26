@@ -1,0 +1,46 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Menu from "../components/Menu.astro";
+import { Logo } from "@acme/ui/logo";
+
+const { title, description } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <BaseHead title={title} description={description} />
+  </head>
+
+  <body>
+    <header>
+      <Logo />
+      <Menu />
+    </header>
+    <main>
+      <slot />
+    </main>
+  </body>
+</html>
+
+<style>
+  body {
+    background-color: #121110;
+    --outer-spacing: 64px;
+    --logo-width: 104px;
+    --inner-spacing: 40px;
+  }
+  header {
+    margin-top: var(--outer-spacing);
+    padding: 0 var(--outer-spacing);
+    display: flex;
+    gap: var(--inner-spacing);
+    align-items: center;
+  }
+  main {
+    margin-left: calc(
+      var(--outer-spacing) + var(--logo-width) + var(--inner-spacing)
+    );
+    margin-top: 44px;
+    width: 945px;
+  }
+</style>

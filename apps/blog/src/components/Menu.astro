@@ -1,0 +1,18 @@
+---
+import HeaderLink from "./HeaderLinkNew.astro";
+---
+
+<nav>
+  <HeaderLink href="/">About me</HeaderLink>
+  <HeaderLink href="/blog">Writing</HeaderLink>
+  <HeaderLink href="/projects">Projects</HeaderLink>
+  <HeaderLink href="/photography">Photography</HeaderLink>
+</nav>
+<style>
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+</style>
