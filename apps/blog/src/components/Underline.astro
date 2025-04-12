@@ -1,0 +1,51 @@
+---
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<span class:list={["underline", className]}>
+  <slot />
+  {
+    Array.from({ length: 30 }).map((_, i) => (
+      <svg
+        class="underline-pattern"
+        width="10"
+        height="8"
+        viewBox="0 0 10 8"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        style={`left: ${i * 8}px`}
+      >
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M5.96971 1.99999L2.00001 5.99999L0.591187 4.58041L4.56088 0.580414L5.96971 1.99999Z"
+          fill="currentColor"
+        />
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M5.96971 1.99999L9.93947 6.00001L8.53064 7.41959L4.56094 3.41959L5.96971 1.99999Z"
+          fill="currentColor"
+        />
+      </svg>
+    ))
+  }
+</span>
+
+<style>
+  .underline {
+    position: relative;
+    display: inline-block;
+    overflow-x: clip;
+    white-space: normal;
+  }
+
+  .underline-pattern {
+    position: absolute;
+    bottom: -8px;
+  }
+</style>

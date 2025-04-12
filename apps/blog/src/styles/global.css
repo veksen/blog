@@ -12,6 +12,55 @@
   --gray-light: 229, 233, 240;
   --gray-dark: 34, 41, 57;
   --gray-gradient: rgba(var(--gray-light), 50%), #fff;
+
+  /* Base Typography */
+  --base-font-size: 18px;
+  --font-family-heading: "DarkerGrotesque", sans-serif;
+  --font-family-body: "DarkerGrotesque", sans-serif;
+
+  /* Font Scale */
+  --font-scale-f7-size: 2.5rem; /* 45px */
+  --font-scale-f7-line-height: 1.36;
+  --font-scale-f7-weight: 700;
+  --font-scale-f7-family: var(--font-family-heading);
+  --font-scale-f7: var(--font-scale-f7-weight) var(--font-scale-f7-size) /
+    var(--font-scale-f7-line-height) var(--font-scale-f7-family);
+
+  --font-scale-f5-size: 2.2222rem; /* 40px */
+  --font-scale-f5-line-height: 1.36;
+  --font-scale-f5-weight: 700;
+  --font-scale-f5-family: var(--font-family-heading);
+  --font-scale-f5: var(--font-scale-f5-weight) var(--font-scale-f5-size) /
+    var(--font-scale-f5-line-height) var(--font-scale-f5-family);
+
+  --font-scale-f4-size: 1.7778rem; /* 32px */
+  --font-scale-f4-line-height: 1.36;
+  --font-scale-f4-weight: 700;
+  --font-scale-f4-family: var(--font-family-heading);
+  --font-scale-f4: var(--font-scale-f4-weight) var(--font-scale-f4-size) /
+    var(--font-scale-f4-line-height) var(--font-scale-f4-family);
+
+  --font-scale-f3-size: 1.3333rem; /* 24px */
+  --font-scale-f3-line-height: 1.36;
+  --font-scale-f3-weight: 700;
+  --font-scale-f3-family: var(--font-family-heading);
+  --font-scale-f3: var(--font-scale-f3-weight) var(--font-scale-f3-size) /
+    var(--font-scale-f3-line-height) var(--font-scale-f3-family);
+
+  --font-scale-f2-size: 1.8rem; /* ~32px */
+  --font-scale-f2-line-height: 1.36;
+  --font-scale-f2-weight: 600;
+  --font-scale-f2-family: var(--font-family-body);
+  --font-scale-f2: var(--font-scale-f2-weight) var(--font-scale-f2-size) /
+    var(--font-scale-f2-line-height) var(--font-scale-f2-family);
+
+  --font-scale-f1-size: 0.8889rem; /* 16px */
+  --font-scale-f1-line-height: 1.36;
+  --font-scale-f1-weight: 400;
+  --font-scale-f1-family: var(--font-family-body);
+  --font-scale-f1: var(--font-scale-f1-weight) var(--font-scale-f1-size) /
+    var(--font-scale-f1-line-height) var(--font-scale-f1-family);
+
   --box-shadow: 0 2px 6px rgba(var(--gray), 25%),
     0 8px 24px rgba(var(--gray), 33%), 0 16px 32px rgba(var(--gray), 33%);
 }
@@ -74,6 +123,7 @@ body {
   color: white;
   font-size: 20px;
   line-height: 1.36;
+  font: var(--font-scale-f2);
 }
 h1,
 h2,
@@ -83,22 +133,22 @@ h5,
 h6 {
   margin: 0 0 0.5rem 0;
   color: white;
-  line-height: 1.2;
 }
 h1 {
-  font-size: 2.5em;
+  font: var(--font-scale-f7);
 }
 h2 {
-  font-size: 2.5em;
+  font: var(--font-scale-f5);
 }
 h3 {
-  font-size: 1.953em;
+  font: var(--font-scale-f4);
 }
 h4 {
-  font-size: 1.563em;
+  font: var(--font-scale-f3);
 }
-h5 {
-  font-size: 1.25em;
+p {
+  font: var(--font-scale-f2);
+  margin-bottom: 1em;
 }
 strong,
 b {
@@ -109,11 +159,6 @@ a {
 }
 a:hover {
   color: var(--accent);
-}
-p {
-  font-size: 1.8rem;
-  margin-bottom: 1em;
-  font-weight: 600;
 }
 .prose p {
   margin-bottom: 2em;
