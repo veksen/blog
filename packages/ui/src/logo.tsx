@@ -1,4 +1,4 @@
-export type LogoProps = React.ButtonHTMLAttributes<SVGSVGElement>;
+export type LogoProps = React.ButtonHTMLAttributes<HTMLDivElement>;
 
 export function Logo(props: LogoProps) {
   return (
