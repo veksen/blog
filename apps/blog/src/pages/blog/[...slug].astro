@@ -1,21 +1,45 @@
 ---
-import { type CollectionEntry, getCollection } from 'astro:content';
-import BlogPost from '../../layouts/BlogPost.astro';
-import { render } from 'astro:content';
+import { type CollectionEntry, getCollection } from "astro:content";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
+import Layout from "../../layouts/Base.astro";
+import { render } from "astro:content";
 
 export async function getStaticPaths() {
-	const posts = await getCollection('blog');
-	return posts.map((post) => ({
-		params: { slug: post.id },
-		props: post,
-	}));
+  const posts = await getCollection("blog");
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: post,
+  }));
 }
-type Props = CollectionEntry<'blog'>;
+type Props = CollectionEntry<"blog">;
 
 const post = Astro.props;
 const { Content } = await render(post);
 ---
 
-<BlogPost {...post.data}>
-	<Content />
-</BlogPost>
+<Layout {...post.data} title={SITE_TITLE} description={SITE_DESCRIPTION}>
+  <h1 class="post__title">{post.data.title}</h1>
+  <Content />
+</Layout>
+
+<style>
+  .post__title {
+    position: relative;
+    width: fit-content;
+    border-bottom: 2px solid transparent;
+    line-height: 1.2;
+  }
+
+  .post__title::before {
+    content: "";
+    display: block;
+    background: #fff;
+    opacity: 0.6;
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    height: 1px;
+    margin-right: 20px;
+    width: calc(var(--logo-width) * 0.5 + var(--inner-spacing) - 1px - 20px);
+  }
+</style>
