@@ -1,6 +1,7 @@
 ---
 title: 'Third post'
 description: 'Lorem ipsum dolor sit amet'
+tags: ['dev', 'soft skills']
 pubDate: 'Jul 22 2022'
 heroImage: '/blog-placeholder-2.jpg'
 ---
