@@ -78,6 +78,32 @@ const { title, description } = Astro.props;
     align-items: center;
   }
 
+  .logo {
+    position: fixed;
+  }
+
+  .logo::before,
+  .logo::after {
+    content: "";
+    display: block;
+    background: #fff;
+    opacity: 0.6;
+    position: absolute;
+    width: 1px;
+    left: 50%;
+    height: 100vh;
+  }
+
+  .logo::before {
+    bottom: 100%;
+    margin-bottom: 20px;
+  }
+
+  .logo::after {
+    top: 100%;
+    margin-top: 20px;
+  }
+
   main {
     margin-left: calc(
       var(--outer-spacing) + var(--logo-width) + var(--inner-spacing)

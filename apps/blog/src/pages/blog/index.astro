@@ -42,8 +42,22 @@ const posts = (await getCollection("blog")).sort(
   }
 
   .post__title {
+    position: relative;
     width: fit-content;
     border-bottom: 2px solid transparent;
+  }
+
+  .post__title::before {
+    content: "";
+    display: block;
+    background: #fff;
+    opacity: 0.6;
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    height: 1px;
+    margin-right: 20px;
+    width: calc(var(--logo-width) * 0.5 + var(--inner-spacing) - 1px - 20px);
   }
 
   .post__link:hover .post__title {
