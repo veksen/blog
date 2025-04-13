@@ -47,15 +47,15 @@
   --font-scale-f3: var(--font-scale-f3-weight) var(--font-scale-f3-size) /
     var(--font-scale-f3-line-height) var(--font-scale-f3-family);
 
-  --font-scale-f2-size: 1.8rem; /* ~32px */
-  --font-scale-f2-line-height: 1.36;
+  --font-scale-f2-size: 1.6rem; /* ~29px */
+  --font-scale-f2-line-height: 1.25;
   --font-scale-f2-weight: 600;
   --font-scale-f2-family: var(--font-family-body);
   --font-scale-f2: var(--font-scale-f2-weight) var(--font-scale-f2-size) /
     var(--font-scale-f2-line-height) var(--font-scale-f2-family);
 
   --font-scale-f1-size: 0.8889rem; /* 16px */
-  --font-scale-f1-line-height: 1.36;
+  --font-scale-f1-line-height: 1.25;
   --font-scale-f1-weight: 600;
   --font-scale-f1-family: var(--font-family-body);
   --font-scale-f1: var(--font-scale-f1-weight) var(--font-scale-f1-size) /
