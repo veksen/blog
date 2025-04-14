@@ -66,50 +66,8 @@
 }
 @font-face {
   font-family: "DarkerGrotesque";
-  src: url("/fonts/DarkerGrotesque-Light.ttf") format("truetype");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "DarkerGrotesque";
-  src: url("/fonts/DarkerGrotesque-Regular.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "DarkerGrotesque";
-  src: url("/fonts/DarkerGrotesque-Medium.ttf") format("truetype");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "DarkerGrotesque";
-  src: url("/fonts/DarkerGrotesque-SemiBold.ttf") format("truetype");
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "DarkerGrotesque";
-  src: url("/fonts/DarkerGrotesque-Bold.ttf") format("truetype");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "DarkerGrotesque";
-  src: url("/fonts/DarkerGrotesque-ExtraBold.ttf") format("truetype");
-  font-weight: 800;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "DarkerGrotesque";
-  src: url("/fonts/DarkerGrotesque-Black.ttf") format("truetype");
-  font-weight: 900;
+  src: url("/fonts/DarkerGrotesque-VariableFont_wght.ttf") format("truetype");
+  font-weight: 300 900;
   font-style: normal;
   font-display: swap;
 }
