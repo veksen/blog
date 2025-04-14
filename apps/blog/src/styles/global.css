@@ -20,28 +20,28 @@
 
   /* Font Scale */
   --font-scale-f7-size: 2.5rem; /* 45px */
-  --font-scale-f7-line-height: 1.36;
+  --font-scale-f7-line-height: 1;
   --font-scale-f7-weight: 700;
   --font-scale-f7-family: var(--font-family-heading);
   --font-scale-f7: var(--font-scale-f7-weight) var(--font-scale-f7-size) /
     var(--font-scale-f7-line-height) var(--font-scale-f7-family);
 
   --font-scale-f5-size: 2.2222rem; /* 40px */
-  --font-scale-f5-line-height: 1.36;
+  --font-scale-f5-line-height: 1;
   --font-scale-f5-weight: 700;
   --font-scale-f5-family: var(--font-family-heading);
   --font-scale-f5: var(--font-scale-f5-weight) var(--font-scale-f5-size) /
     var(--font-scale-f5-line-height) var(--font-scale-f5-family);
 
   --font-scale-f4-size: 1.7778rem; /* 32px */
-  --font-scale-f4-line-height: 1.36;
+  --font-scale-f4-line-height: 1;
   --font-scale-f4-weight: 700;
   --font-scale-f4-family: var(--font-family-heading);
   --font-scale-f4: var(--font-scale-f4-weight) var(--font-scale-f4-size) /
     var(--font-scale-f4-line-height) var(--font-scale-f4-family);
 
   --font-scale-f3-size: 1.3333rem; /* 24px */
-  --font-scale-f3-line-height: 1.36;
+  --font-scale-f3-line-height: 1.25;
   --font-scale-f3-weight: 800;
   --font-scale-f3-family: var(--font-family-heading);
   --font-scale-f3: var(--font-scale-f3-weight) var(--font-scale-f3-size) /
