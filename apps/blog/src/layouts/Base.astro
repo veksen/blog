@@ -14,13 +14,15 @@ const { title, description } = Astro.props;
   <body>
     <div class="container">
       <div class="content">
-        <header>
-          <Logo />
-          <Menu />
-        </header>
-        <main>
-          <slot />
-        </main>
+        <div class="content-inner">
+          <header>
+            <Logo />
+            <Menu />
+          </header>
+          <main>
+            <slot />
+          </main>
+        </div>
       </div>
       <div class="structure">
         <div class="structure-inner">
@@ -39,6 +41,7 @@ const { title, description } = Astro.props;
     --logo-width: 104px;
     --inner-spacing: 40px;
     --structure-width: 315px;
+    --content-width: 770px;
   }
 
   .container {
@@ -50,6 +53,15 @@ const { title, description } = Astro.props;
     overflow-y: scroll;
     height: 100dvh;
     flex-grow: 1;
+  }
+
+  .content-inner {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: calc(
+      var(--content-width) + var(--outer-spacing) * 2 + var(--inner-spacing) +
+        var(--logo-width)
+    );
   }
 
   .content::-webkit-scrollbar {
