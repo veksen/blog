@@ -15,7 +15,7 @@ const posts = (await getCollection("blog")).sort(
       posts.map((post) => (
         <li class="post">
           <a class="post__link" href={`/blog/${post.id}/`}>
-            <h3 class="post__title">{post.data.title}</h3>
+            <h3 class="post__title as-f7">{post.data.title}</h3>
             <div class="post__tags">
               {post.data.tags.map((tag) => (
                 <span class="post__tag">{tag}</span>
