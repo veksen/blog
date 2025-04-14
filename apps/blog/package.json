@@ -12,7 +12,6 @@
     "@acme/ui": "*",
     "@astrojs/mdx": "^4.2.1",
     "@astrojs/react": "^4.2.1",
-    "@astrojs/rss": "^4.0.11",
     "@astrojs/sitemap": "^3.3.0",
     "@types/react": "^19.0.12",
     "@types/react-dom": "^19.0.4",
