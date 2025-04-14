@@ -44,7 +44,6 @@ const posts = (await getCollection("blog")).sort(
   .post__title {
     position: relative;
     width: fit-content;
-    border-bottom: 2px solid transparent;
   }
 
   .post__title::before {
@@ -61,7 +60,9 @@ const posts = (await getCollection("blog")).sort(
   }
 
   .post__link:hover .post__title {
-    border-bottom-color: white;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 5px;
   }
 
   .post__tags {
