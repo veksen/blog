@@ -42,6 +42,8 @@ const { title, description } = Astro.props;
     --inner-spacing: 40px;
     --structure-width: 315px;
     --content-width: 770px;
+    --decorative-line-offset: 50%;
+    --decorative-line-gutter: 20px;
   }
 
   .container {
@@ -108,12 +110,12 @@ const { title, description } = Astro.props;
 
   .logo::before {
     bottom: 100%;
-    margin-bottom: 20px;
+    margin-bottom: var(--decorative-line-gutter);
   }
 
   .logo::after {
     top: 100%;
-    margin-top: 20px;
+    margin-top: var(--decorative-line-gutter);
   }
 
   main {
@@ -157,3 +159,29 @@ const { title, description } = Astro.props;
     margin: 0;
   }
 </style>
+
+<script>
+  const dissapearanceThresholdInPixels = 50;
+
+  function getValue(scrollTop: number) {
+    return Math.max(0, Math.min(1, scrollTop / dissapearanceThresholdInPixels));
+  }
+
+  const content = document.querySelector(".content");
+
+  content?.addEventListener("scroll", () => {
+    const postTitle = document.querySelectorAll<HTMLElement>(".post__title");
+    const logo = document.querySelector<HTMLElement>(".logo");
+
+    if (logo && postTitle.length > 0) {
+      const logoRect = logo.getBoundingClientRect();
+
+      postTitle.forEach((postTitle) => {
+        const rect = postTitle.getBoundingClientRect();
+        const distanceFromLogo = rect.top - logoRect.bottom;
+        const value = getValue(distanceFromLogo);
+        postTitle.style.setProperty("--scroll-progress", value.toString());
+      });
+    }
+  });
+</script>

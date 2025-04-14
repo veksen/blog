@@ -37,22 +37,10 @@ const { Content } = await render(post);
     background: rgba(255, 255, 255, 0.6);
     opacity: var(--scroll-progress, 1);
     position: absolute;
-    top: 50%;
+    top: var(--decorative-line-offset);
     right: 100%;
     height: 1px;
-    margin-right: 20px;
+    margin-right: var(--decorative-line-gutter);
     width: calc(var(--logo-width) * 0.5 + var(--inner-spacing) - 1px - 20px);
   }
 </style>
-
-<script>
-  document.querySelector(".content")?.addEventListener("scroll", (event) => {
-    const target = event.target as HTMLElement;
-    const scrollTop = target.scrollTop;
-    const value = Math.max(0, Math.min(1, 1 - scrollTop / 50));
-    document.documentElement.style.setProperty(
-      "--scroll-progress",
-      value.toString()
-    );
-  });
-</script>

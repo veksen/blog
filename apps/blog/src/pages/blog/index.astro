@@ -50,13 +50,13 @@ const posts = (await getCollection("blog")).sort(
   .post__title::before {
     content: "";
     display: block;
-    background: #fff;
-    opacity: 0.6;
+    background: rgba(255, 255, 255, 0.6);
+    opacity: var(--scroll-progress, 1);
     position: absolute;
-    top: 50%;
+    top: var(--decorative-line-offset);
     right: 100%;
     height: 1px;
-    margin-right: 20px;
+    margin-right: var(--decorative-line-gutter);
     width: calc(var(--logo-width) * 0.5 + var(--inner-spacing) - 1px - 20px);
   }
 
