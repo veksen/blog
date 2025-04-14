@@ -96,24 +96,29 @@ h6 {
   color: white;
 }
 
-h1 {
+h1,
+.as-f7 {
   font: var(--font-scale-f7);
 }
 
-h2 {
+h2,
+.as-f5 {
   font: var(--font-scale-f5);
 }
 
-h3 {
+h3,
+.as-f4 {
   font: var(--font-scale-f4);
 }
 
-h4 {
+h4,
+.as-f3 {
   font: var(--font-scale-f3);
   text-transform: uppercase;
 }
 
-p {
+p,
+.as-f2 {
   font: var(--font-scale-f2);
   margin-bottom: 1em;
 }
