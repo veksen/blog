@@ -33,8 +33,8 @@ const { Content } = await render(post);
   .post__title::before {
     content: "";
     display: block;
-    background: #fff;
-    opacity: 0.6;
+    background: rgba(255, 255, 255, 0.6);
+    opacity: var(--scroll-progress, 1);
     position: absolute;
     top: 50%;
     right: 100%;
@@ -43,3 +43,15 @@ const { Content } = await render(post);
     width: calc(var(--logo-width) * 0.5 + var(--inner-spacing) - 1px - 20px);
   }
 </style>
+
+<script>
+  document.querySelector(".content")?.addEventListener("scroll", (event) => {
+    const target = event.target as HTMLElement;
+    const scrollTop = target.scrollTop;
+    const value = Math.max(0, Math.min(1, 1 - scrollTop / 20));
+    document.documentElement.style.setProperty(
+      "--scroll-progress",
+      value.toString()
+    );
+  });
+</script>
