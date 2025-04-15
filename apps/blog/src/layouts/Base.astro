@@ -2,6 +2,7 @@
 import BaseHead from "../components/BaseHead.astro";
 import Menu from "../components/Menu.astro";
 import { Logo } from "@acme/ui/logo";
+import { BubblyBackground } from "@acme/ui/bubbly-background";
 
 const { title, description } = Astro.props;
 ---
@@ -14,6 +15,7 @@ const { title, description } = Astro.props;
   <body>
     <div class="container">
       <div class="content">
+        <BubblyBackground className="bubbly-background" />
         <div class="content-inner">
           <header>
             <Logo />
@@ -44,6 +46,16 @@ const { title, description } = Astro.props;
     --content-width: 770px;
     --decorative-line-offset: 50%;
     --decorative-line-gutter: 20px;
+  }
+
+  .bubbly-background {
+    pointer-events: none;
+    opacity: 0.05;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
   }
 
   .container {

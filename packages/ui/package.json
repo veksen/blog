@@ -4,6 +4,11 @@
   "license": "MIT",
   "sideEffects": false,
   "exports": {
+    "./bubbly-background": {
+      "types": "./src/bubbly-background.tsx",
+      "import": "./dist/bubbly-background.mjs",
+      "require": "./dist/bubbly-background.js"
+    },
     "./button": {
       "types": "./src/button.tsx",
       "import": "./dist/button.mjs",
