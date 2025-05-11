@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@acme/ui": "*",
-    "@astrojs/mdx": "^4.2.4",
+    "@astrojs/mdx": "^4.2.6",
     "@astrojs/react": "^4.2.7",
     "@astrojs/sitemap": "^3.3.0",
     "@types/react": "^19.1.3",
