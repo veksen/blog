@@ -12,7 +12,7 @@
     "@acme/ui": "*",
     "@astrojs/mdx": "^4.3.1",
     "@astrojs/react": "^4.3.0",
-    "@astrojs/sitemap": "^3.3.1",
+    "@astrojs/sitemap": "^3.4.1",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
     "astro": "^5.7.12",
