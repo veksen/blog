@@ -9,7 +9,7 @@
   },
   "devDependencies": {
     "@changesets/cli": "^2.29.5",
-    "prettier": "^3.5.3",
+    "prettier": "^3.6.2",
     "turbo": "^2.5.3"
   },
   "name": "design-system",
