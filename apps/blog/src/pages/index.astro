@@ -1,6 +1,5 @@
 ---
 import Layout from "../layouts/Base.astro";
-import Underline from "../components/Underline.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 ---
 
@@ -9,17 +8,38 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
   <p>
     Hybrid web developer & designer, specialized in UI and front-end
     development, experienced with the whole stack. My current tools of choice
-    are React on TypeScript, and more recently .NET/C#.
+    are React and React-Native on TypeScript, and more recently .NET/C#.
   </p>
   <p>
-    Outside of work, I’m into sports photography, traveling, music & concerts,
-    and currently learning <Underline>simracing</Underline>.
+    I'm currently working for <a href="https://querydoctor.com" target="_blank">Query Doctor</a>,
+    a small company creating tools and visualizations to help developers understand and optimize
+    their PostgreSQL databases.
+  <p>
+    Outside of work, traveling, music & concerts, but also a lot of programming
+    and side-projects. I have a recent interest for taking better care of my
+    body: eating better, understanding what I eat, exercising more, and going
+    to the gym. Previously, I did a lot of sports photography.
   </p>
 
   <h2>What's new?</h2>
   <p>
-    I’m currently semi-nomad working traveling the world, while building an
+    I’m currently semi-nomad working and traveling the world, while building an
     application to find cool coffee shops near you. Also slowly attempting to
     learn Russian.
   </p>
 </Layout>
+
+<style>
+  a {
+    color: #bbc1b8;
+  }
+
+  a:hover {
+    color: #fff;
+    text-decoration-color: #bbc1b8;
+  }
+
+  a:not(:hover) {
+    transition: 0.2s all ease-in-out;
+  }
+</style>
