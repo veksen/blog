@@ -4,12 +4,14 @@
     "build": "turbo run build",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
+    "lint:fix": "turbo run lint -- --fix",
     "clean": "turbo run clean && rm -rf node_modules",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "prettier --write \"**/*.{ts,tsx,md,js,jsx,json,astro,css,html}\""
   },
   "devDependencies": {
     "@changesets/cli": "^2.29.5",
     "prettier": "^3.6.2",
+    "prettier-plugin-astro": "^0.13.0",
     "turbo": "^2.5.5"
   },
   "name": "design-system",

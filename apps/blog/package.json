@@ -6,7 +6,8 @@
     "astro": "astro",
     "build": "astro build",
     "dev": "astro dev",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "lint": "eslint . --max-warnings 0"
   },
   "dependencies": {
     "@acme/ui": "*",
@@ -19,5 +20,8 @@
     "astro": "^5.12.3",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "*"
   }
 }
