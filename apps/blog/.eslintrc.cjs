@@ -1,7 +1,7 @@
 /** @type {import("eslint").Linter.Config} */
 module.exports = {
   extends: [
-    "@repo/eslint-config/react.js",
+    "@veksen/eslint-config/react.js",
     "plugin:astro/recommended",
   ],
   overrides: [
