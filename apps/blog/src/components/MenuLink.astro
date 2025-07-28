@@ -10,19 +10,76 @@ const isActive = href === pathname || href === "/" + (subpath?.[0] || "");
 ---
 
 <a href={href} class:list={[className, { active: isActive }]} {...props}>
-  <slot />
+  <span class="text"><slot /></span>
+  <span class="text-hover"><slot /></span>
 </a>
 
 <style>
   a {
+    --padding-top: 2px;
+    --padding-bottom: 4px;
+    --padding-x: 5px;
+    position: relative;
     font-size: 24px;
     display: inline-block;
     text-decoration: none;
     text-transform: uppercase;
     font-weight: 700;
     color: white;
-    border-bottom: 4px solid white;
     white-space: nowrap;
+    padding: var(--padding-top) var(--padding-x) var(--padding-bottom)
+      var(--padding-x);
+    overflow: hidden;
+  }
+
+  a > .text::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: white;
+  }
+
+  a:hover::after {
+    opacity: 0;
+  }
+
+  a > .text {
+    position: relative;
+    top: 0;
+    transition: 0.3s all ease-in-out;
+  }
+
+  a:hover > .text {
+    top: -40px;
+  }
+
+  a > .text-hover {
+    position: absolute;
+    left: var(--padding-x);
+    bottom: -40px;
+    transition: 0.3s all ease-in-out;
+  }
+
+  a:hover > .text-hover {
+    left: var(--padding-x);
+    bottom: var(--padding-x);
+  }
+
+  a::before {
+    content: "";
+  }
+
+  a:hover::before {
+    z-index: -1;
+    position: absolute;
+    top: calc(var(--padding-top) * -1);
+    left: calc(var(--padding-x) * -1);
+    right: calc(var(--padding-x) * -1);
+    bottom: calc(var(--padding-bottom) * -1);
+    background: #c84209;
   }
 
   a.active {
