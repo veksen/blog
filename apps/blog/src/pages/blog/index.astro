@@ -1,7 +1,7 @@
 ---
-import Layout from "../../layouts/Base.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
 import { getCollection } from "astro:content";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
+import Layout from "../../layouts/Base.astro";
 
 const blogCollection = await getCollection("blog");
 const posts = blogCollection.sort(
