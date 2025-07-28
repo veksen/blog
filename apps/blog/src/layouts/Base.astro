@@ -21,7 +21,7 @@ const { title, description } = Astro.props;
             <Logo />
             <Menu />
           </header>
-          <main>
+          <main transition:animate="none">
             <slot />
           </main>
         </div>
