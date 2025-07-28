@@ -1,29 +1,29 @@
 {
-  "private": true,
-  "scripts": {
-    "build": "turbo run build",
-    "dev": "turbo run dev",
-    "lint": "turbo run lint",
-    "lint:fix": "turbo run lint -- --fix",
-    "clean": "turbo run clean && rm -rf node_modules",
-    "format": "prettier --write \"**/*.{ts,tsx,md,js,jsx,json,astro,css,html}\""
-  },
-  "devDependencies": {
-    "prettier": "^3.6.2",
-    "prettier-plugin-astro": "^0.13.0",
-    "turbo": "^2.5.5"
-  },
   "name": "veksen-blog",
-  "packageManager": "npm@10.5.0",
+  "private": true,
   "workspaces": [
     "apps/*",
     "packages/*"
   ],
+  "scripts": {
+    "build": "turbo run build",
+    "clean": "turbo run clean && rm -rf node_modules",
+    "dev": "turbo run dev",
+    "format": "prettier --write \"**/*.{ts,tsx,md,js,jsx,json,astro,css,html}\"",
+    "lint": "turbo run lint",
+    "lint:fix": "turbo run lint -- --fix"
+  },
   "dependencies": {
     "@astrojs/react": "^4.3.0",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
-  }
+  },
+  "devDependencies": {
+    "prettier": "^3.6.2",
+    "prettier-plugin-astro": "^0.13.0",
+    "turbo": "^2.5.5"
+  },
+  "packageManager": "npm@10.5.0"
 }

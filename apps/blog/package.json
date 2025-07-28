@@ -6,8 +6,8 @@
     "astro": "astro",
     "build": "astro build",
     "dev": "astro dev",
-    "preview": "astro preview",
-    "lint": "eslint . --max-warnings 0"
+    "lint": "eslint . --max-warnings 0",
+    "preview": "astro preview"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.1",
