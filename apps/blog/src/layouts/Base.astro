@@ -24,6 +24,7 @@ const { title, description } = Astro.props;
           <main transition:animate="none">
             <slot />
           </main>
+          <slot name="aside" />
         </div>
       </div>
       <div class="structure">
@@ -56,6 +57,7 @@ const { title, description } = Astro.props;
       }
 
       .container {
+        position: relative;
         display: flex;
         margin-right: var(--structure-width);
       }

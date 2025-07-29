@@ -27,6 +27,10 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
     application to find cool coffee shops near you. Also slowly attempting to
     learn Russian.
   </p>
+
+  <div slot="aside" class="my-photo">
+    <img src="/jpsl-photo.jpg" alt="Jean-Philippe's photo" />
+  </div>
 </Layout>
 
 <style>
@@ -41,5 +45,18 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 
   a:not(:hover) {
     transition: 0.2s all ease-in-out;
+  }
+
+  .my-photo {
+    position: absolute;
+    z-index: 99999;
+    right: -150px;
+    top: 180px;
+    width: 200px;
+    border: 13px solid #b7bfb5;
+  }
+
+  .my-photo img {
+    border-radius: 0;
   }
 </style>
