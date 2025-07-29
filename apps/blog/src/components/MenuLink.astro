@@ -1,7 +1,9 @@
 ---
 import type { HTMLAttributes } from "astro/types";
 
-type Props = HTMLAttributes<"a">;
+type Props = HTMLAttributes<"a"> & {
+  disabled?: boolean;
+};
 
 const { href, class: className, ...props } = Astro.props;
 const pathname = Astro.url.pathname.replace(import.meta.env.BASE_URL, "");
@@ -30,6 +32,26 @@ const isActive = href === pathname || href === "/" + (subpath?.[0] || "");
     padding: var(--padding-top) var(--padding-x) var(--padding-bottom)
       var(--padding-x);
     overflow: hidden;
+  }
+
+  a[disabled] {
+    user-select: none;
+    pointer-events: none;
+    color: rgba(255, 255, 255, 0.2);
+  }
+
+  a[disabled] .text::after {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  a[disabled]::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    content: "soon";
+    background: #c84209;
+    font-size: 0.85rem;
+    color: #ccc;
   }
 
   a > .text::after {
