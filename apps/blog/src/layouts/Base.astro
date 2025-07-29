@@ -15,7 +15,7 @@ const { title, description } = Astro.props;
   <body>
     <div class="container">
       <div class="content">
-        <BubblyBackground className="bubbly-background" />
+        <BubblyBackground className="bubbly-background" client:load />
         <div class="content-inner">
           <header>
             <Logo />
