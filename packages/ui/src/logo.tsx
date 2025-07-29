@@ -10,6 +10,7 @@ export function Logo(props: LogoProps) {
         viewBox="0 0 104 86"
         width="104"
         xmlns="http://www.w3.org/2000/svg"
+        style={{ width: `var(--logo-width, "104px")` }}
       >
         <rect
           fill="url(#paint0_linear_434_93)"

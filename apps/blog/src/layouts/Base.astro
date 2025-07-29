@@ -41,9 +41,26 @@ const { title, description } = Astro.props;
         --logo-width: 104px;
         --inner-spacing: 40px;
         --structure-width: 315px;
+        --structure-border: 44px;
         --content-width: 770px;
         --decorative-line-offset: 50%;
         --decorative-line-gutter: 20px;
+
+        @media screen and (max-width: 1024px) {
+          --outer-spacing: 48px;
+          --logo-width: 80px;
+          --inner-spacing: 20px;
+          --structure-width: 175px;
+          --structure-border: 22px;
+        }
+
+        @media screen and (max-width: 578px) {
+          --outer-spacing: 24px;
+          --logo-width: 64px;
+          --inner-spacing: 20px;
+          --structure-width: 75px;
+          --structure-border: 22px;
+        }
       }
 
       .bubbly-background {
@@ -143,7 +160,7 @@ const { title, description } = Astro.props;
         overflow: hidden;
         position: fixed;
         width: var(--structure-width);
-        border: 44px solid #b9c0b6;
+        border: var(--structure-border) solid #b9c0b6;
         border-right: none;
         top: 0;
         right: 0;
