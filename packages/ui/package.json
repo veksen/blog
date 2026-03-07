@@ -36,7 +36,7 @@
     "@veksen/typescript-config": "*",
     "eslint": "^8.57.0",
     "tsup": "^8.5.1",
-    "typescript": "5.8.3"
+    "typescript": "5.9.3"
   },
   "publishConfig": {
     "access": "public"
